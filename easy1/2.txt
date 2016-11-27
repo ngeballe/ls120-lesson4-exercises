@@ -1,1 +1,38 @@
-2.txt
+Question 2
+
+If we have a Car class and a Truck class and we want to be able to go_fast, how can we add the ability for them to go_fast using the module Speed? How can you check if your Car or Truck can now go fast?
+
+module Speed
+  def go_fast
+    puts "I am a #{self.class} and going super fast!"
+  end
+end
+
+class Car
+  def go_slow
+    puts "I am safe and driving slow."
+  end
+end
+
+class Truck
+  def go_very_slow
+    puts "I am a heavy truck and like going very slow."
+  end
+end
+
+Answer:
+You can add the ability for them to go fast by mixing in the Speed module to the Car and the Truck class, like so:
+
+class Car
+  include Speed
+
+  ...
+end
+
+You can check that the Car and Truck can now go fast by creating an instance variable of each class and then calling the "go_fast" method on it:
+
+car = Car.new
+car.go_fast
+
+truck = Truck.new
+truck.go_fast
