@@ -1,0 +1,21 @@
+Question 7
+
+What is used in this class but doesn't add any value?
+
+class Light
+  attr_accessor :brightness, :color
+
+  def initialize(brightness, color)
+    @brightness = brightness
+    @color = color
+  end
+
+  def self.information
+    return "I want to turn on the light with a brightness level of super high and a color of green"
+  end
+
+end
+
+
+Answer:
+You're not using the instance variables @brightness and @color or the getter and setter methods (Light#brightness, Light#color, Light#brightness=, Light#color=). The return in Light::information is unecessary; you could just use an implicit return.
