@@ -1,0 +1,23 @@
+Question 1
+
+You are given the following code:
+
+class Oracle
+  def predict_the_future
+    "You will " + choices.sample
+  end
+
+  def choices
+    ["eat a nice lunch", "take a nap soon", "stay at work late"]
+  end
+end
+
+What is the result of calling
+
+oracle = Oracle.new
+oracle.predict_the_future
+
+
+Answer:
+The object "oracle" generates a string that starts with "You will " and ends with a randomly select choice from the menu of choices under the Oracle#choices method. But nothing is printed because there is no puts method.
+

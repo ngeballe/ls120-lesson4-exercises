@@ -1,0 +1,11 @@
+Question 5
+
+There are a number of variables listed below. What are the different types and how do you know which is which?
+
+excited_dog = "excited dog"
+@excited_dog = "excited dog"
+@@excited_dog = "excited dog"
+
+Answer:
+
+excited_dog is a local variable because it doesn't start with any "@" characters. @excited_dog starts with one "@" character, so it's an instance variable. @@excited_dog starts with two, so it's a class variable.
