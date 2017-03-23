@@ -1,0 +1,31 @@
+Question 2
+
+We have an Oracle class and a RoadTrip class that inherits from the Oracle class.
+
+```ruby
+class Oracle
+  def predict_the_future
+    "You will " + choices.sample
+  end
+
+  def choices
+    ["eat a nice lunch", "take a nap soon", "stay at work late"]
+  end
+end
+
+class RoadTrip < Oracle
+  def choices
+    ["visit Vegas", "fly to Fiji", "romp in Rome"]
+  end
+end
+```
+
+What is the result of the following:
+
+```ruby
+trip = RoadTrip.new
+trip.predict_the_future
+```
+
+#Answer:
+Calling #predict_the_future on the trip obejct will use Oracle#predict_the_future, since RoadTrip doesn't have a #predict_the_future method of its own (it will check that first) and it inherits from the class Oracle, which does have a #predict_the_future method. That method calls choices. This will result in calling RoadTrip#choices rather than Oracle#choices, because methodsin the class override those in the superclass. Oracle#choices will return a randomly selected element from the array: ["visit Vegas", "fly to Fiji", "romp in Rome"]. So trip.predict_the_future will return  "You will <do something>", completing the sentence with "visit Vegas", "fly to Fiji", or "romp in Rome", chosen at random.

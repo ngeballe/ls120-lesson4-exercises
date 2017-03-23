@@ -1,0 +1,61 @@
+Question 2
+
+In the last question we had the following classes:
+
+```ruby
+class Greeting
+  def greet(message)
+    puts message
+  end
+end
+
+class Hello < Greeting
+  def hi
+    greet("Hello")
+  end
+end
+
+class Goodbye < Greeting
+  def bye
+    greet("Goodbye")
+  end
+end
+```
+
+If we call Hello.hi we get an error message. How would you fix this?
+
+#Answer:
+You could fix this by creating a class method Hello.hi:
+
+```ruby
+class Hello < Greeting
+  ...
+
+  def self.hi
+    greet("Hello")
+  end
+end
+```
+
+CORRECTION BASED ON SOLUTION 2:
+You have to create a Greeting instance first, then call Greeting#greet on that, because Greeting#greet is an instance method, not a class method:
+
+```ruby
+class Hello < Greeting
+  ...
+
+  def self.hi
+    greeting = Greeting.new
+    greeting.greet("Hello")
+  end
+end
+```
+
+Or you could create a Hello object and then call the isntance method Hello#hi on that object:
+
+```ruby
+
+hello = Hello.new
+hello.hi
+
+```

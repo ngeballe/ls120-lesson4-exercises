@@ -1,0 +1,26 @@
+Question 6
+
+If I have the following class:
+
+```ruby
+class Television
+  def self.manufacturer
+    # method logic
+  end
+
+  def model
+    # method logic
+  end
+end
+```
+
+Which one of these is a class method (if any) and how do you know? How would you call a class method?
+
+#Answer:
+The first, Television::manufacturer, is a class method. You know because it starts with "self", which refers to the class itself since it's right inside the class, not inside an instance method. Television#model is an instance method because it doesn't start with "self" or the class name. You call a class method like this:
+
+```
+Television.manufacturer
+```
+
+

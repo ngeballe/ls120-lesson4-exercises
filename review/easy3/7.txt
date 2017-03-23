@@ -1,0 +1,27 @@
+Question 7
+
+What is used in this class but doesn't add any value?
+
+```ruby
+
+class Light
+  attr_accessor :brightness, :color
+
+  def initialize(brightness, color)
+    @brightness = brightness
+    @color = color
+  end
+
+  def self.information
+    return "I want to turn on the light with a brightness level of super high and a color of green"
+  end
+end
+
+```
+
+#Answer:
+The getter and setter methods for @brightness and @color are not adding any value; they're not being called anywhere. In fact, those instance variables themselves are being set but not called.
+#CORRECTION:
+The attr_accessors do add value because we could call the getter and setter methods from outside the class. The word "return" in the method Light::information is not adding any value. Just using an implicit return would be better.
+
+

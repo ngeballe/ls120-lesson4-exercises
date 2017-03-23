@@ -1,0 +1,6 @@
+Question 10
+
+What are the benefits of using Object Oriented Programming in Ruby? Think of as many as you can.
+
+#Answer:
+You can organize code more easily, grouping methods related to the same objects together.

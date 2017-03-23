@@ -1,0 +1,49 @@
+Question 2
+
+If we have a Car class and a Truck class and we want to be able to go_fast, how can we add the ability for them to go_fast using the module Speed? How can you check if your Car or Truck can now go fast?
+
+```ruby
+module Speed
+  def go_fast
+    puts "I am a #{self.class} and going super fast!"
+  end
+end
+
+class Car
+  def go_slow
+    puts "I am safe and driving slow."
+  end
+end
+
+class Truck
+  def go_very_slow
+    puts "I am a heavy truck and like going very slow."
+  end
+end
+```
+
+#Answer:
+You can add ```include Speed``` to the Car and the Truck class, like this:
+
+```ruby
+class Car
+  include Speed
+  ...
+end
+
+class Truck
+  include Speed
+  ...
+end
+```
+
+You can check that they can go_fast by creating an instance of each class and then calling ```go_fast``` on it:
+
+```ruby
+my_car = Car.new
+my_car.go_fast
+
+my_truck = Truck.new
+my_truck.go_fast
+```
+

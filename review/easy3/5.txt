@@ -1,0 +1,35 @@
+Question 5
+
+If I have the following class:
+
+```ruby
+
+class Television
+  def self.manufacturer
+    # method logic
+  end
+
+  def model
+    # method logic
+  end
+end
+
+```
+
+What would happen if I called the methods like shown below?
+
+```ruby
+
+tv = Television.new
+tv.manufacturer
+tv.model
+
+Television.manufacturer
+Television.model
+
+```
+
+#Answer:
+Calling tv.manufacturer will produce a No-Method Error because the class Television does not have an instance method named "manufacturer".
+Calling tv.model will work because there is a Television#model instance method.
+Calling Television.manufacturer will call the Television::manufacturer class method. Calling Television.model will raise a No-Method Error because there is no class method named model in the Television class.

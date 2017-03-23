@@ -1,0 +1,29 @@
+Question 1
+
+You are given the following code:
+
+```ruby
+class Oracle
+  def predict_the_future
+    "You will " + choices.sample
+  end
+
+  def choices
+    ["eat a nice lunch", "take a nap soon", "stay at work late"]
+  end
+end
+```
+
+What is the result of calling
+
+```ruby
+oracle = Oracle.new
+oracle.predict_the_future
+```
+
+#Answer:
+The result is that the oracle will predict your future by randomly choosing a string from the array returned by Oracle#choices: ["eat a nice lunch", "take a nap soon", "stay at work late"]. Oracle#predict_the_future will return one of the following, selected at random:
+
+"You will eat a nice lunch"
+"You will take a nap soon"
+"You will stay at work late"

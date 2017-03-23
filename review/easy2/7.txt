@@ -1,0 +1,24 @@
+Question 7
+
+If we have a class such as the one below:
+
+```ruby
+class Cat
+  @@cats_count = 0
+
+  def initialize(type)
+    @type = type
+    @age  = 0
+    @@cats_count += 1
+  end
+
+  def self.cats_count
+    @@cats_count
+  end
+end
+```
+
+Explain what the @@cats_count variable does and how it works. What code would you need to write to test your theory?
+
+#Answer:
+The @@cats_count variable is keeping track of how many Cat objects have been created. It is set at 0 when the class is created, then it's increased by 1 every time a new Cat instance is initialized. You can test thing theory by creating a few cat instances and then calling Cat::cats_count. It should return the number of cats you have created.

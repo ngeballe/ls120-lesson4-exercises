@@ -1,0 +1,30 @@
+Question 3
+
+In the last question Alyssa showed Alan this code which keeps track of items for a shopping cart application:
+
+```ruby
+
+class InvoiceEntry
+  attr_reader :quantity, :product_name
+
+  def initialize(product_name, number_purchased)
+    @quantity = number_purchased
+    @product_name = product_name
+  end
+
+  def update_quantity(updated_count)
+    quantity = updated_count if updated_count >= 0
+  end
+end
+
+```
+
+Alan noticed that this will fail when update_quantity is called. Since quantity is an instance variable, it must be accessed with the @quantity notation when setting it. One way to fix this is to change attr_reader to attr_accessor and change quantity to self.quantity.
+
+Is there anything wrong with fixing it this way?
+
+#Answer:
+Fixing it this way--with attr_accessor, which creates a setter method--would allow programmers to change the value of @quantity from outside the InvoiceEntry class. That could be a problem depending on the circumstances.
+
+#CORRECTION:
+It allows changing @quantity more directly, with instance.quantity = new_value, rather than going through the update_quantity method. This means that the protection provided by update_quantity--not allowing the quantity to be changed to a negative number--can be circumvented, which could be a problem.

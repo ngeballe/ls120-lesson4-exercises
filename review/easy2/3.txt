@@ -1,0 +1,29 @@
+Question 3
+
+How do you find where Ruby will look for a method when that method is called? How can you find an object's ancestors?
+
+```ruby
+module Taste
+  def flavor(flavor)
+    puts "#{flavor}"
+  end
+end
+
+class Orange
+  include Taste
+end
+
+class HotSauce
+  include Taste
+end
+```
+
+What is the lookup chain for Orange and HotSauce?
+
+#Answer:
+Ruby looks first in the class of the object the method is being called on. Then it goes up the chain of the class's ancestors, from the superclass, to the superclass's superclass, and so on, up to BasicObject, the class from which all Ruby classes inherit. Before checking each class's superclass, though, Ruby checks modules that have been mixed into the class, in order from the last one mixed in to the first.
+
+You can find an object's ancestors by class <object>.class.ancestors.
+
+The lookup chain for 
+

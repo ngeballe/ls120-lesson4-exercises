@@ -1,0 +1,34 @@
+Question 6
+
+What could we add to the class below to access the instance variable @volume?
+
+```ruby
+class Cube
+  def initialize(volume)
+    @volume = volume
+  end
+end
+```
+
+#Answer:
+We could add a getter method:
+
+```ruby
+class Cube
+  ...
+  def volume
+    @volume
+  end
+end
+```
+
+or more simply, an attr_reader:
+
+```ruby
+class Cube
+  attr_reader :volume
+
+  ...
+end
+```
+

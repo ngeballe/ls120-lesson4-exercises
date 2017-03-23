@@ -1,0 +1,15 @@
+Question 10
+
+If we have the class below, what would you need to call to create a new instance of this class.
+
+```ruby
+class Bag
+  def initialize(color, material)
+    @color = color
+    @material = material
+  end
+end
+```
+
+#Answer:
+You would need to call Bag.new(some_color, some_material), passing it the parameters for color and material.

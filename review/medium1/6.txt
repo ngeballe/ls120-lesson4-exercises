@@ -1,0 +1,42 @@
+Question 6
+
+If we have these two methods:
+
+```ruby
+
+class Computer
+  attr_accessor :template
+
+  def create_template
+    @template = "template 14231"
+  end
+
+  def show_template
+    template
+  end
+end
+
+```
+
+and
+
+```ruby
+
+class Computer
+  attr_accessor :template
+
+  def create_template
+    self.template = "template 14231"
+  end
+
+  def show_template
+    self.template
+  end
+end
+
+```
+
+What is the difference in the way the code works?
+
+#Answer:
+The code is functionallly identical. Both create getter and setter methods for a @template instance variable. In each, the create_template method sets the @template variable to "template 14231" and show_template gets and returns it. The difference is under the hood in how the methods operate. In the first code, Computer#create_template, sets @template directly; in the second, it uses the setter method to set it. In the second, unlike the first, Computer#show_template uses the word 'self' to invoke the calling instance, but that doesn't make any practical difference.

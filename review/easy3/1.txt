@@ -1,0 +1,74 @@
+Question 1
+
+If we have this code:
+
+```ruby
+class Greeting
+  def greet(message)
+    puts message
+  end
+end
+
+class Hello < Greeting
+  def hi
+    greet("Hello")
+  end
+end
+
+class Goodbye < Greeting
+  def bye
+    greet("Goodbye")
+  end
+end
+```
+
+What happens in each of the following cases:
+
+case 1:
+
+```ruby
+hello = Hello.new
+hello.hi
+```
+
+#Answer:
+A new Hello object, hello, will be created. Calling Hello#hi on this object will return greet("Hello"), which calls Greeting#greet, which prints the message "Hello" to the screen.
+
+case 2:
+
+```ruby
+hello = Hello.new
+hello.bye
+```
+
+#Answer:
+Calling "bye" on a Hello object will return a No-Method Error because there is no "bye" method in Hello or its parent class.
+
+case 3:
+
+```ruby
+hello = Hello.new
+hello.greet
+```
+
+#Answer:
+Calling "greet" on a Hello object will call Greeting#greet, since Hello inherits from Greeting. But Greeting#greet requires an argument, and none was supplied. So Ruby will raise an Argument Error.
+
+case 4:
+
+```ruby
+hello = Hello.new
+hello.greet("Goodbye")
+```
+
+#Answer:
+In this case, Greeting#greet is called on a Hello object with an argument: the string 'Goodbye'. Greeting#greet will print 'Goodbye' to the screen.
+
+case 5:
+
+```ruby
+Hello.hi
+```
+
+#Answer:
+"Hello.hi" will return a No Method Error, because Hello#hi is not a class method; it's an instance method.
